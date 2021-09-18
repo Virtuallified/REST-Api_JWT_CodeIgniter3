@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "f346f992-0065-4e80-a3ea-ade373ff0fc2",
+		"name": "RESTAPI_JWT_CI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "newUser1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "user1@example.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "newUser1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "newUser1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/reGenToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "newUser1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/reGenToken",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"reGenToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjMxOTc1Njk2fQ.NM6M42MHJk0bnQBhk7riBqufIKvIp-L1WUR1KguUaEQ"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Chowmin",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "45.00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsInVzZXJuYW1lIjoibmV3VXNlcjEiLCJBUElfVElNRSI6MTYzMTk3NDk1MH0.cr2plOf1-7t3x30zQksKx0a8kyJFnGVmGLFOnxETufg"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsInVzZXJuYW1lIjoibmV3VXNlcjEiLCJBUElfVElNRSI6MTYzMTk3NDk1MH0.cr2plOf1-7t3x30zQksKx0a8kyJFnGVmGLFOnxETufg"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/product/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjMxOTc3MzAzfQ._dePQzHnwS8aWaLr10pf1UAhHkHhxhJhVhO7Yr4zn10"
+					},
+					{
+						"key": "name",
+						"value": "Bhuna Chicken"
+					},
+					{
+						"key": "price",
+						"value": "120.00"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/product/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/4",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjMxOTc2NTU2fQ.Px4XuHXb3Bb0bafu8XnbmnbRG0OkQ6HQSb0U71swyUM"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/product/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "c4829003-f393-4064-aecb-ef7320644c01",
+			"key": "url",
+			"value": "http://localhost/api_jwt_ci3",
+			"type": "string",
+			"description": ""
+		}
+	]
+}
