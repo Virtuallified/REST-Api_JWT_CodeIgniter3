@@ -5,7 +5,7 @@
 | JWT Secure Key
 |--------------------------------------------------------------------------
 */
-$config['jwt_key'] = 'enMB8ms2Nh8RNz7nRKrGTiMRG9aRPp8G5d';
+$config['jwt_key'] = 'sPnqLAKkacMTGiLrq9MmeY5tYdm8D6T9Yx6BzigN';
 
 
 /*
