@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f346f992-0065-4e80-a3ea-ade373ff0fc2",
+		"_postman_id": "3a5ce25c-f15c-4632-b6e0-e0f2c165a226",
 		"name": "RESTAPI_JWT_CI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -16,19 +16,16 @@
 						{
 							"key": "username",
 							"value": "newUser1",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "email",
 							"value": "user1@example.com",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "123456",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -56,13 +53,11 @@
 						{
 							"key": "username",
 							"value": "newUser1",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "123456",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -90,13 +85,11 @@
 						{
 							"key": "username",
 							"value": "newUser1",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "123456",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -120,14 +113,7 @@
 				"header": [],
 				"body": {
 					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "username",
-							"value": "newUser1",
-							"description": "",
-							"type": "text"
-						}
-					]
+					"formdata": []
 				},
 				"url": {
 					"raw": "{{url}}/reGenToken",
@@ -157,13 +143,11 @@
 						{
 							"key": "name",
 							"value": "Chowmin",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "price",
 							"value": "45.00",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -190,7 +174,6 @@
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsInVzZXJuYW1lIjoibmV3VXNlcjEiLCJBUElfVElNRSI6MTYzMTk3NDk1MH0.cr2plOf1-7t3x30zQksKx0a8kyJFnGVmGLFOnxETufg"
 					}
 				],
-				"body": {},
 				"url": {
 					"raw": "{{url}}/product",
 					"host": [
@@ -213,7 +196,6 @@
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsInVzZXJuYW1lIjoibmV3VXNlcjEiLCJBUElfVElNRSI6MTYzMTk3NDk1MH0.cr2plOf1-7t3x30zQksKx0a8kyJFnGVmGLFOnxETufg"
 					}
 				],
-				"body": {},
 				"url": {
 					"raw": "{{url}}/product/1",
 					"host": [
@@ -245,7 +227,6 @@
 						"value": "120.00"
 					}
 				],
-				"body": {},
 				"url": {
 					"raw": "{{url}}/product/3",
 					"host": [
@@ -269,7 +250,6 @@
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjMxOTc2NTU2fQ.Px4XuHXb3Bb0bafu8XnbmnbRG0OkQ6HQSb0U71swyUM"
 					}
 				],
-				"body": {},
 				"url": {
 					"raw": "{{url}}/product/4",
 					"host": [
@@ -286,11 +266,9 @@
 	],
 	"variable": [
 		{
-			"id": "c4829003-f393-4064-aecb-ef7320644c01",
 			"key": "url",
 			"value": "http://localhost/dev/php-codeigniter3/rest_api_jwt",
-			"type": "string",
-			"description": ""
+			"type": "string"
 		}
 	]
 }
