@@ -288,7 +288,7 @@
 		{
 			"id": "c4829003-f393-4064-aecb-ef7320644c01",
 			"key": "url",
-			"value": "http://localhost/api_jwt_ci3",
+			"value": "http://localhost/dev/php-codeigniter3/rest_api_jwt",
 			"type": "string",
 			"description": ""
 		}
