@@ -476,7 +476,7 @@ $config['rest_access_table'] = 'access';
 | Set to FALSE to log as serialized PHP
 |
 */
-$config['rest_logs_json_params'] = TRUE;
+$config['rest_logs_json_params'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -551,7 +551,7 @@ $config['rest_ajax_only'] = FALSE;
 | Language file to load from the language directory
 |
 */
-$config['rest_language'] = 'portuguese-brazilian';
+$config['rest_language'] = 'english';
 
 /*
 |--------------------------------------------------------------------------
