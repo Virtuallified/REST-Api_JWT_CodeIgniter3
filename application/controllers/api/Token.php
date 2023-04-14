@@ -32,8 +32,8 @@ class Token extends REST_Controller {
     
 	 public function reGenToken_post() {
 
-		// set variables from the form
-		$username = $this->input->post('username');
+		// get from the session the username
+		$username = @$_SESSION['username'];
 		if(!empty($username)) {
 			$user_id = $this->user_model->get_user_id_from_username($username);
 			if (!empty($user_id)) {
@@ -52,7 +52,7 @@ class Token extends REST_Controller {
 				$this->response(['username not valid'], REST_Controller::HTTP_OK);
 		}
 		else
-			$this->response(['username is required to regenerate token.'], REST_Controller::HTTP_OK);
+			$this->response(['please login again.'], REST_Controller::HTTP_OK);
 
 	 }
 }
