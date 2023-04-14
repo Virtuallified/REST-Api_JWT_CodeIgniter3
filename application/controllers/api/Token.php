@@ -33,7 +33,7 @@ class Token extends REST_Controller {
 	 public function reGenToken_post() {
 
 		// get from the session the username
-		$username = @$_SESSION['username'];
+		$username = @$_SESSION['username']; 
 		if(!empty($username)) {
 			$user_id = $this->user_model->get_user_id_from_username($username);
 			if (!empty($user_id)) {
