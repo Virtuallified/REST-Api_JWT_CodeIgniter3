@@ -166,9 +166,11 @@ class User extends REST_Controller {
 		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 			
 			// remove session datas
-			foreach ($_SESSION as $key => $value) {
-				unset($_SESSION[$key]);
-			}
+			unset($_SESSION['user_id']);
+			unset($_SESSION['username']);
+			unset($_SESSION['logged_in']);
+			unset($_SESSION['is_confirmed']);
+			unset($_SESSION['is_admin']);
 			
 			// user logout ok
             $this->response(['Logout success!'], REST_Controller::HTTP_OK);
@@ -176,9 +178,7 @@ class User extends REST_Controller {
 		} else {
 			
 			// there user was not logged in, we cannot logged him out,
-			// redirect him to site root
-			// redirect('/');
-            $this->response(['There was a problem. Please try again.'], REST_Controller::HTTP_OK);	
+            $this->response(['No user logged in.'], REST_Controller::HTTP_OK);	
 		}
 		
 	}
