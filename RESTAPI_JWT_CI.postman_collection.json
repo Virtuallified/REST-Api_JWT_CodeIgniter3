@@ -75,59 +75,6 @@
 			"response": []
 		},
 		{
-			"name": "{{url}}/logout",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "username",
-							"value": "newUser1",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123456",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{url}}/logout",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"logout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "{{url}}/reGenToken",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "{{url}}/reGenToken",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"reGenToken"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "{{url}}/product",
 			"request": {
 				"method": "POST",
@@ -159,6 +106,45 @@
 					],
 					"path": [
 						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/update/1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt-authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1IiwidXNlcm5hbWUiOiJuZXdVc2VyMTUiLCJBUElfVElNRSI6MTY4MTU4NDM5NH0.GU6aP6JBfmYPAeGtGFIJEtxw-Qn-_FCIL4ERuKMh2rQ"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "BrunaChicken",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "55.00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/product/update/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"update",
+						"1"
 					]
 				}
 			},
@@ -210,37 +196,6 @@
 			"response": []
 		},
 		{
-			"name": "{{url}}/product/3",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxNTc5NjEwfQ.F2lmjgYutT9CdDssNyQQsVU-jUYIzZrQxIpR_k1o8WU"
-					},
-					{
-						"key": "name",
-						"value": "Bhuna Chicken"
-					},
-					{
-						"key": "price",
-						"value": "120.00"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/product/3",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"product",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "{{url}}/product/4",
 			"request": {
 				"method": "DELETE",
@@ -258,6 +213,31 @@
 					"path": [
 						"product",
 						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/api/test_api/verify_token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt-authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1IiwidXNlcm5hbWUiOiJuZXdVc2VyMTUiLCJBUElfVElNRSI6MTY4MTU4MzI1MH0.LXEKVz39rMPwViryxCSN-bGIKPRxoBD18nk8TgomwFo",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/test_api/verify_token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"test_api",
+						"verify_token"
 					]
 				}
 			},

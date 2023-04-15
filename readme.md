@@ -48,7 +48,7 @@ This repo contains in-development code for future releases.
 
 #### Register & Login
 
-POST : [http://localhost/api_jwt_ci3/register](http://localhost/api_jwt_ci3/register)
+POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/register](http://localhost/dev/php-codeigniter3/rest_api_jwt/register)
 
 |Body     |
 |---------|
@@ -56,52 +56,45 @@ POST : [http://localhost/api_jwt_ci3/register](http://localhost/api_jwt_ci3/regi
 |email    |
 |password |
 
-POST : [http://localhost/api_jwt_ci3/login](http://localhost/api_jwt_ci3/login)
+POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/login](http://localhost/dev/php-codeigniter3/rest_api_jwt/login)
 
 |Body     |
 |---------|
 |username |
 |password |
 
-POST : [http://localhost/api_jwt_ci3/logout](http://localhost/api_jwt_ci3/logout)
+POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/logout](http://localhost/dev/php-codeigniter3/rest_api_jwt/logout)
 
 ### CRUD
 
-GET : [http://localhost/api_jwt_ci3/product](http://localhost/api_jwt_ci3/product)
+GET : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product](http://localhost/dev/php-codeigniter3/rest_api_jwt/product)
 
 
 |Headers      |Body     |
 |-------------|---------|
 |jwt-authorization|         |
 
-POST : [http://localhost/api_jwt_ci3/product](http://localhost/api_jwt_ci3/product)
+POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product](http://localhost/dev/php-codeigniter3/rest_api_jwt/product)
 
 |Headers      |Body     |
 |-------------|---------|
 |jwt-authorization|name     |
 |             |price    |
 
-PUT : [http://localhost/api_jwt_ci3/product/:id](http://localhost/api_jwt_ci3/product/:id)
+POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id)
+
+**PUT** method doesn’t work properly with PHP (it's hard to get the parameters). The solution is to use **POST** method to perform a product **UPDATE**.
+
+|Headers      |Body     |
+|-------------|---------|
+|jwt-authorization|name     |
+|             |price    |
+
+DELETE : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/:id)
 
 |Headers      |Body     |
 |-------------|---------|
 |jwt-authorization|         |
-|name         |         |
-|price        |         |
-
-DELETE : [http://localhost/api_jwt_ci3/product/:id](http://localhost/api_jwt_ci3/product/:id)
-
-|Headers      |Body     |
-|-------------|---------|
-|jwt-authorization|         |
-
-### Token Regeneration
-
-POST : [http://localhost/api_jwt_ci3/reGenToken](http://localhost/api_jwt_ci3/reGenToken)
-
-|Body     |
-|---------|
-|username |
 
 *******************
 Server Requirements

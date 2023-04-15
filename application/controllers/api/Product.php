@@ -16,136 +16,105 @@
  * 
  * @extends REST_Controller
  */
-   require APPPATH . '/libraries/REST_Controller.php';
-   use Restserver\Libraries\REST_Controller;
-     
-class Product extends REST_Controller {
-    
-	  /**
+require APPPATH . '/libraries/REST_Controller.php';
+
+use Restserver\Libraries\REST_Controller;
+
+class Product extends REST_Controller
+{
+
+    /**
      * CONSTRUCTOR | LOAD MODEL
      *
      * @return Response
-    */
-    public function __construct() {
-       parent::__construct();
-       $this->load->library('Authorization_Token');	
-       $this->load->model('Product_model');
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->library('Authorization_Token');
+        $this->load->model('Product_model');
     }
-       
+
     /**
      * SHOW | GET method.
      *
      * @return Response
-    */
-	public function index_get($id = 0)
-	{
-        $headers = $this->input->request_headers(); 
-        if (isset($headers['jwt-authorization'])) {
-            $decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
-            if ($decodedToken['status'])
-            {
-                // ------- Main Logic part -------
-                if(!empty($id)){
-                    $data = $this->Product_model->show($id);
-                } else {
-                    $data = $this->Product_model->show();
-                }
-                $this->response($data, REST_Controller::HTTP_OK);
-                // ------------- End -------------
-            } 
-            else {
-                $this->response($decodedToken);
+     */
+    public function index_get($id = 0)
+    {
+        $decodedToken = $this->authorization_token->validateToken();
+        if ($decodedToken['status']) {
+            if (!empty($id)) {
+                $data = $this->Product_model->show($id);
+            } else {
+                $data = $this->Product_model->show();
             }
+            $this->response($data, REST_Controller::HTTP_OK);
         } else {
-            $this->response(['Authentication failed'], REST_Controller::HTTP_OK);
+            $this->response($decodedToken);
         }
-	}
-      
+    }
+
     /**
      * INSERT | POST method.
      *
      * @return Response
-    */
+     */
     public function index_post()
     {
-        $headers = $this->input->request_headers(); 
-		if (isset($headers['jwt-authorization'])) {
-			$decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
-            if ($decodedToken['status'])
-            {
-                // ------- Main Logic part -------
-                $input = $this->input->post();
-                $data = $this->Product_model->insert($input);
-        
-                $this->response(['Product created successfully.'], REST_Controller::HTTP_OK);
-                // ------------- End -------------
-            }
-            else {
-                $this->response($decodedToken);
-            }
-		}
-		else {
-			$this->response(['Authentication failed'], REST_Controller::HTTP_OK);
-		}
-    } 
-     
+        $decodedToken = $this->authorization_token->validateToken();
+        if ($decodedToken['status']) {
+            $input = $this->input->post();
+            $data['name'] = @$input['name'];
+            $data['price'] = @$input['price'];
+            $data = $this->Product_model->insert($input);
+
+            $this->response(['Product created successfully.'], REST_Controller::HTTP_OK);
+        } else {
+            $this->response($decodedToken);
+        }
+    }
+
     /**
      * UPDATE | PUT method.
      *
      * @return Response
-    */
-    public function index_put($id)
+     */
+    public function update_post($id)
     {
-        $headers = $this->input->request_headers(); 
-		if (isset($headers['jwt-authorization'])) {
-			$decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
-            if ($decodedToken['status'])
-            {
-                // ------- Main Logic part -------
-                // $input = $this->put();
-                $headers = $this->input->request_headers(); 
-                $data['name'] = $headers['name'];
-                $data['price'] = $headers['price'];
-                $response = $this->Product_model->update($data, $id);
+        $decodedToken = $this->authorization_token->validateToken();
+        if ($decodedToken['status']) {
+            $input = $this->input->post();
+            $data['name'] = @$input['name'];
+            $data['price'] = @$input['price'];
+            $response = $this->Product_model->update($data, $id);
 
-                $response>0?$this->response(['Product updated successfully.'], REST_Controller::HTTP_OK):$this->response(['Not updated'], REST_Controller::HTTP_OK);
-                // ------------- End -------------
+            if ($response) {
+                $this->response(['Product updated successfully.'], REST_Controller::HTTP_OK);
+            } else {
+                $this->response(['Not updated'], REST_Controller::HTTP_OK);
             }
-            else {
-                $this->response($decodedToken);
-            }
-		}
-		else {
-			$this->response(['Authentication failed'], REST_Controller::HTTP_OK);
-		}
+        } else {
+            $this->response($decodedToken);
+        }
     }
-     
+
     /**
      * DELETE method.
      *
      * @return Response
-    */
+     */
     public function index_delete($id)
     {
-        
-        $headers = $this->input->request_headers(); 
-		if (isset($headers['jwt-authorization'])) {
-			$decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
-            if ($decodedToken['status'])
-            {
-                // ------- Main Logic part -------
-                $response = $this->Product_model->delete($id);
+        $decodedToken = $this->authorization_token->validateToken();
+        if ($decodedToken['status']) {
+            // ------- Main Logic part -------
+            $response = $this->Product_model->delete($id);
 
-                $response>0?$this->response(['Product deleted successfully.'], REST_Controller::HTTP_OK):$this->response(['Not deleted'], REST_Controller::HTTP_OK);
-                // ------------- End -------------
-            }
-            else {
-                $this->response($decodedToken);
-            }
-		}
-		else {
-			$this->response(['Authentication failed'], REST_Controller::HTTP_OK);
-		}
+            $response > 0 ? $this->response(['Product deleted successfully.'], REST_Controller::HTTP_OK) : $this->response(['Not deleted'], REST_Controller::HTTP_OK);
+            // ------------- End -------------
+        } else {
+            $this->response($decodedToken);
+        }
     }
-    	
 }

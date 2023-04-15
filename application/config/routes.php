@@ -56,7 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 /* API */
 $route['product'] = 'api/Product';
 $route['product/(:any)'] = 'api/Product/$1';
-$route['product/(:num)']['PUT'] = 'api/Product/$1';
+$route['product/update/(:num)'] = 'api/Product/update/$1';
+//$route['product/(:num)']['PUT'] = 'api/Product/$1'; // Not working properly due to PHP limitations with PUT requests
 $route['product/(:num)']['DELETE'] = 'api/Product/$1';
 $route['register'] = 'api/User/register';
 $route['login'] = 'api/User/login';
