@@ -124,14 +124,7 @@ class User extends REST_Controller {
 				
 				$user_id = $this->user_model->get_user_id_from_username($username);
 				$user    = $this->user_model->get_user($user_id);
-				
-				// set session user datas
-				$_SESSION['user_id']      = (int)$user->id;
-				$_SESSION['username']     = (string)$user->username;
-				$_SESSION['logged_in']    = (bool)true;
-				$_SESSION['is_confirmed'] = (bool)$user->is_confirmed;
-				$_SESSION['is_admin']     = (bool)$user->is_admin;
-				
+								
 				// user login ok
                 $token_data['uid'] = $user_id;
                 $token_data['username'] = $user->username; 
@@ -155,32 +148,5 @@ class User extends REST_Controller {
 		
 	}
 	
-	/**
-	 * logout function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function logout_post() {
-
-		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-			
-			// remove session datas
-			unset($_SESSION['user_id']);
-			unset($_SESSION['username']);
-			unset($_SESSION['logged_in']);
-			unset($_SESSION['is_confirmed']);
-			unset($_SESSION['is_admin']);
-			
-			// user logout ok
-            $this->response(['Logout success!'], REST_Controller::HTTP_OK);
-			
-		} else {
-			
-			// there user was not logged in, we cannot logged him out,
-            $this->response(['No user logged in.'], REST_Controller::HTTP_OK);	
-		}
-		
-	}
 	
 }
