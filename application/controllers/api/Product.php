@@ -40,8 +40,8 @@ class Product extends REST_Controller {
 	public function index_get($id = 0)
 	{
         $headers = $this->input->request_headers(); 
-        if (isset($headers['Authorization'])) {
-            $decodedToken = $this->authorization_token->validateToken($headers['Authorization']);
+        if (isset($headers['jwt-authorization'])) {
+            $decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
             if ($decodedToken['status'])
             {
                 // ------- Main Logic part -------
@@ -69,8 +69,8 @@ class Product extends REST_Controller {
     public function index_post()
     {
         $headers = $this->input->request_headers(); 
-		if (isset($headers['Authorization'])) {
-			$decodedToken = $this->authorization_token->validateToken($headers['Authorization']);
+		if (isset($headers['jwt-authorization'])) {
+			$decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
             if ($decodedToken['status'])
             {
                 // ------- Main Logic part -------
@@ -97,8 +97,8 @@ class Product extends REST_Controller {
     public function index_put($id)
     {
         $headers = $this->input->request_headers(); 
-		if (isset($headers['Authorization'])) {
-			$decodedToken = $this->authorization_token->validateToken($headers['Authorization']);
+		if (isset($headers['jwt-authorization'])) {
+			$decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
             if ($decodedToken['status'])
             {
                 // ------- Main Logic part -------
@@ -129,8 +129,8 @@ class Product extends REST_Controller {
     {
         
         $headers = $this->input->request_headers(); 
-		if (isset($headers['Authorization'])) {
-			$decodedToken = $this->authorization_token->validateToken($headers['Authorization']);
+		if (isset($headers['jwt-authorization'])) {
+			$decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
             if ($decodedToken['status'])
             {
                 // ------- Main Logic part -------

@@ -27,8 +27,8 @@ class Test_api extends REST_Controller
 	public function verify_post()
 	{  
 		$headers = $this->input->request_headers(); 
-		if (isset($headers['Authorization'])) {
-			$decodedToken = $this->authorization_token->validateToken($headers['Authorization']);
+		if (isset($headers['jwt-authorization'])) {
+			$decodedToken = $this->authorization_token->validateToken($headers['jwt-authorization']);
 			$this->response($decodedToken);
 		}
 		else {

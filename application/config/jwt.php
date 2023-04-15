@@ -20,8 +20,9 @@ $config['jwt_algorithm'] = 'HS256';
 |-----------------------
 | Token Request Header Name
 |--------------------------------------------------------------------------
+| Just "authorization" doesn't work in some cases.
 */
-$config['token_header'] = 'authorization';
+$config['token_header'] = 'jwt-authorization';
 
 
 /*
