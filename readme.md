@@ -32,7 +32,7 @@ This repo contains in-development code for future releases.
 - Import .sql file of create by database tables from raw SQL given above controller file. 
 - Register a User.
 - Login with that user to get the `access_token`.
-- To perform crud operations you have to supply the `access_token` in header for `Authorization` with other data in body section.
+- To perform crud operations you have to supply the `access_token` in header for `jwt-authorization` with other data in body section.
 - If `access_token` expired, you can also regenerate `access_token` by providing `username`.
 - Logout & clear the session.
 
@@ -43,6 +43,7 @@ This repo contains in-development code for future releases.
 > `jwt_key` must be changed for your own protection in production environment.
 ***********************
 **Postman Calls & Methods**
+
 ***********************
 
 #### Register & Login
@@ -71,20 +72,20 @@ GET : [http://localhost/api_jwt_ci3/product](http://localhost/api_jwt_ci3/produc
 
 |Headers      |Body     |
 |-------------|---------|
-|Authorization|         |
+|jwt-authorization|         |
 
 POST : [http://localhost/api_jwt_ci3/product](http://localhost/api_jwt_ci3/product)
 
 |Headers      |Body     |
 |-------------|---------|
-|Authorization|name     |
+|jwt-authorization|name     |
 |             |price    |
 
 PUT : [http://localhost/api_jwt_ci3/product/:id](http://localhost/api_jwt_ci3/product/:id)
 
 |Headers      |Body     |
 |-------------|---------|
-|Authorization|         |
+|jwt-authorization|         |
 |name         |         |
 |price        |         |
 
@@ -92,7 +93,7 @@ DELETE : [http://localhost/api_jwt_ci3/product/:id](http://localhost/api_jwt_ci3
 
 |Headers      |Body     |
 |-------------|---------|
-|Authorization|         |
+|jwt-authorization|         |
 
 ### Token Regeneration
 
