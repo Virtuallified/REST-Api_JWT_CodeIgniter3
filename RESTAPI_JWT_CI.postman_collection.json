@@ -80,7 +80,7 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "jwt-authorization",
+						"key": "Jwt-Authorization",
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
@@ -118,7 +118,7 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "jwt-authorization",
+						"key": "Jwt-Authorization",
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
@@ -157,8 +157,8 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
+						"key": "Jwt-Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxNjYzNTMzfQ.ijKhgXhU7dyxZ8h2SU-fcTWCNxrxgwKCXb-eeCAB2w8"
 					}
 				],
 				"url": {
@@ -180,7 +180,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "jwt-authorization",
+						"key": "Jwt-Authorization",
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
@@ -204,7 +204,7 @@
 				"method": "DELETE",
 				"header": [
 					{
-						"key": "jwt-authorization",
+						"key": "Jwt-Authorization",
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
@@ -228,7 +228,7 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "jwt-authorization",
+						"key": "Jwt-Authorization",
 						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0",
 						"type": "default"
 					}

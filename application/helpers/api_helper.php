@@ -7,10 +7,10 @@ function check_authorization() {
 
     // verificando se token foi enviado
     $headers = $ci->input->request_headers();
-    if (empty($headers['jwt-authorization'])) {
+    if (empty($headers['Jwt-Authorization'])) {
         $ci->response([
             'status' => FALSE,
-            'message' => 'Token is not defined (header param "jwt-authorization" is missing).'
+            'message' => 'Token is not defined (header param "Jwt-Authorization" is missing).'
         ], REST_Controller::HTTP_UNAUTHORIZED);
     }
 

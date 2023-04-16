@@ -32,7 +32,7 @@ This repo contains in-development code for future releases.
 - Import .sql file of create by database tables from raw SQL given above controller file. 
 - Register a User.
 - Login with that user to get the `access_token`.
-- To perform crud operations you have to supply the `access_token` in header for `jwt-authorization` with other data in body section.
+- To perform crud operations you have to supply the `access_token` in header for `Jwt-Authorization` with other data in body section.
 - If `access_token` expired, you can also regenerate `access_token` by providing `username`.
 - Logout & clear the session.
 
@@ -72,13 +72,13 @@ GET : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product](http://localh
 
 |Headers      |Body     |
 |-------------|---------|
-|jwt-authorization|         |
+|Jwt-Authorization|         |
 
 POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product](http://localhost/dev/php-codeigniter3/rest_api_jwt/product)
 
 |Headers      |Body     |
 |-------------|---------|
-|jwt-authorization|name     |
+|Jwt-Authorization|name     |
 |             |price    |
 
 POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id)
@@ -87,14 +87,14 @@ POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id](h
 
 |Headers      |Body     |
 |-------------|---------|
-|jwt-authorization|name     |
+|Jwt-Authorization|name     |
 |             |price    |
 
 DELETE : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/:id)
 
 |Headers      |Body     |
 |-------------|---------|
-|jwt-authorization|         |
+|Jwt-Authorization|         |
 
 *******************
 Server Requirements
