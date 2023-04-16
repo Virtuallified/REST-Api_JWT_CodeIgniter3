@@ -53,13 +53,13 @@ $route['default_controller'] = '';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-/* API */
-$route['product'] = 'api/Product';
-$route['product/(:any)'] = 'api/Product/$1';
+
+$route['product/insert'] = 'api/Product/insert';
+$route['product/show/(:any)'] = 'api/Product/show/$1';
+$route['product/list'] = 'api/Product/list';
 $route['product/update/(:num)'] = 'api/Product/update/$1';
 //$route['product/(:num)']['PUT'] = 'api/Product/$1'; // Not working properly due to PHP limitations with PUT requests
-$route['product/(:num)']['DELETE'] = 'api/Product/$1';
+$route['product/delete/(:num)']['DELETE'] = 'api/Product/delete/$1';
+
 $route['register'] = 'api/User/register';
 $route['login'] = 'api/User/login';
-$route['logout'] = 'api/User/logout';
-$route['reGenToken'] = 'api/Token/reGenToken';

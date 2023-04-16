@@ -75,50 +75,13 @@
 			"response": []
 		},
 		{
-			"name": "{{url}}/product",
+			"name": "{{url}}/product/insert",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxNTc5NjEwfQ.F2lmjgYutT9CdDssNyQQsVU-jUYIzZrQxIpR_k1o8WU"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Chowmin",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "45.00",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{url}}/product",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"product"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "{{url}}/product/update/1",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1IiwidXNlcm5hbWUiOiJuZXdVc2VyMTUiLCJBUElfVElNRSI6MTY4MTU4NDM5NH0.GU6aP6JBfmYPAeGtGFIJEtxw-Qn-_FCIL4ERuKMh2rQ"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
 				"body": {
@@ -131,7 +94,45 @@
 						},
 						{
 							"key": "price",
-							"value": "55.00",
+							"value": "45.60",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/product/insert",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/update/1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt-authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "BrunaChicken",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "55.50",
 							"type": "text"
 						}
 					]
@@ -151,44 +152,46 @@
 			"response": []
 		},
 		{
-			"name": "{{url}}/product",
+			"name": "{{url}}/product/list",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxNTc5NjEwfQ.F2lmjgYutT9CdDssNyQQsVU-jUYIzZrQxIpR_k1o8WU"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
 				"url": {
-					"raw": "{{url}}/product",
+					"raw": "{{url}}/product/list",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"product"
+						"product",
+						"list"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{url}}/product/1",
+			"name": "{{url}}/product/show/1",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxNTc5NjEwfQ.F2lmjgYutT9CdDssNyQQsVU-jUYIzZrQxIpR_k1o8WU"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
 				"url": {
-					"raw": "{{url}}/product/1",
+					"raw": "{{url}}/product/show/1",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"product",
+						"show",
 						"1"
 					]
 				}
@@ -196,23 +199,24 @@
 			"response": []
 		},
 		{
-			"name": "{{url}}/product/4",
+			"name": "{{url}}/product/delete/1",
 			"request": {
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxNTc5NjEwfQ.F2lmjgYutT9CdDssNyQQsVU-jUYIzZrQxIpR_k1o8WU"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0"
 					}
 				],
 				"url": {
-					"raw": "{{url}}/product/4",
+					"raw": "{{url}}/product/delete/1",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"product",
-						"4"
+						"delete",
+						"1"
 					]
 				}
 			},
@@ -225,7 +229,7 @@
 				"header": [
 					{
 						"key": "jwt-authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1IiwidXNlcm5hbWUiOiJuZXdVc2VyMTUiLCJBUElfVElNRSI6MTY4MTU4MzI1MH0.LXEKVz39rMPwViryxCSN-bGIKPRxoBD18nk8TgomwFo",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI2IiwidXNlcm5hbWUiOiJuZXdVc2VyNDQxIiwiQVBJX1RJTUUiOjE2ODE2NjA0ODN9.5GgUloKx8j4DOL2HyI_oaciV31-zZnVCCEzymYkomI0",
 						"type": "default"
 					}
 				],

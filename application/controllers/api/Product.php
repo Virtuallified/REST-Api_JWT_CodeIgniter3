@@ -1,21 +1,5 @@
 <?php
 
-/* Table structure for table `products` */
-// CREATE TABLE `products` (
-//   `id` int(10) UNSIGNED NOT NULL,
-//   `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-//   `price` double NOT NULL,
-//   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-//   `updated_at` datetime DEFAULT NULL
-// ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-// ALTER TABLE `products` ADD PRIMARY KEY (`id`);
-// ALTER TABLE `products` MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1; COMMIT;
-
-/**
- * Product class.
- * 
- * @extends REST_Controller
- */
 require APPPATH . '/libraries/REST_Controller.php';
 
 use Restserver\Libraries\REST_Controller;
@@ -42,16 +26,42 @@ class Product extends REST_Controller
      *
      * @return Response
      */
-    public function index_get($id = 0)
+    public function list_get()
     {
         check_authorization();
 
-        if (!empty($id)) {
-            $data = $this->Product_model->show($id);
-        } else {
-            $data = $this->Product_model->show();
+        $data = $this->Product_model->list();
+
+        $this->response([
+            'status' => TRUE,
+            'data' => $data
+        ], REST_Controller::HTTP_OK);
+    }
+
+    public function show_get($id = 0)
+    {
+        check_authorization();
+
+        if (empty($id)) {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Product id param not found.',
+            ], REST_Controller::HTTP_BAD_REQUEST);
         }
-        $this->response($data, REST_Controller::HTTP_OK);
+
+        $data = $this->Product_model->show($id);
+
+        if (empty($data)) {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Product not found.',
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+
+        $this->response([
+            'status' => TRUE,
+            'data' => $data
+        ], REST_Controller::HTTP_OK);
     }
 
     /**
@@ -59,7 +69,7 @@ class Product extends REST_Controller
      *
      * @return Response
      */
-    public function index_post()
+    public function insert_post()
     {
         check_authorization();
 
@@ -75,11 +85,12 @@ class Product extends REST_Controller
         }
 
         $input = $this->input->post();
-        $data['name'] = @$input['name'];
-        $data['price'] = @$input['price'];
-        $data = $this->Product_model->insert($input);
+        $this->Product_model->insert($input);
 
-        $this->response(['Product created successfully.'], REST_Controller::HTTP_OK);
+        $this->response([
+            'status' => TRUE,
+            'message' => 'Product created successfully.'
+        ], REST_Controller::HTTP_OK);
     }
 
     /**
@@ -103,15 +114,19 @@ class Product extends REST_Controller
         }
 
         $input = $this->input->post();
-        $data['name'] = @$input['name'];
-        $data['price'] = @$input['price'];
-        $response = $this->Product_model->update($data, $id);
+        $response = $this->Product_model->update($input, $id);
 
-        if ($response) {
-            $this->response(['Product updated successfully.'], REST_Controller::HTTP_OK);
-        } else {
-            $this->response(['Not updated'], REST_Controller::HTTP_OK);
+        if (empty($response)) {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Not updated'
+            ], REST_Controller::HTTP_OK);
         }
+
+        $this->response([
+            'status' => TRUE,
+            'message' => 'Product updated successfully.'
+        ], REST_Controller::HTTP_OK);
     }
 
     /**
@@ -119,16 +134,22 @@ class Product extends REST_Controller
      *
      * @return Response
      */
-    public function index_delete($id)
+    public function delete_delete($id)
     {
         check_authorization();
 
         $response = $this->Product_model->delete($id);
 
-        if ($response) {
-            $this->response(['Product deleted successfully.'], REST_Controller::HTTP_OK);
-        } else {
-            $this->response(['Not deleted'], REST_Controller::HTTP_OK);
+        if (empty($response)) {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Not deleted'
+            ], REST_Controller::HTTP_NOT_FOUND);
         }
+
+        $this->response([
+            'status' => TRUE,
+            'message' => 'Product deleted successfully.'
+        ], REST_Controller::HTTP_OK);
     }
 }

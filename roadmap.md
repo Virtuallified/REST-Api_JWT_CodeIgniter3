@@ -1,7 +1,9 @@
  # Roadmap
 
  - [x] Create a helper to verify token/logged user
- - [ ] Validate input data with form validation
+ - [x] Validate input data with form validation
     - [X] Products
-    - [ ] User
- - [ ] API REST URLs refactor
+    - [x] User
+ - [X] API REST URLs refactor
+ - [x] Put status in every return message // Correct HTTP response codes
+ - [x] simplify database
