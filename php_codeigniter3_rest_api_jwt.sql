@@ -42,7 +42,7 @@ CREATE TABLE `ci_sessions` (
 
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `price` double NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL

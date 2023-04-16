@@ -3,7 +3,7 @@
 /* Table structure for table `products` */
 // CREATE TABLE `products` (
 //   `id` int(10) UNSIGNED NOT NULL,
-//   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+//   `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
 //   `price` double NOT NULL,
 //   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
 //   `updated_at` datetime DEFAULT NULL
@@ -34,6 +34,7 @@ class Product extends REST_Controller
         $this->load->library('Authorization_Token');
         $this->load->model('Product_model');
         $this->load->helper('api_helper');
+        $this->load->library('form_validation');
     }
 
     /**
@@ -62,6 +63,17 @@ class Product extends REST_Controller
     {
         check_authorization();
 
+        $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]|max_length[20]');
+        $this->form_validation->set_rules('price', 'Price', 'required|decimal');
+
+        if (!$this->form_validation->run()) {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Validation Error.',
+                'errors' => $this->form_validation->error_array()
+            ], REST_Controller::HTTP_BAD_REQUEST);
+        }
+
         $input = $this->input->post();
         $data['name'] = @$input['name'];
         $data['price'] = @$input['price'];
@@ -78,6 +90,17 @@ class Product extends REST_Controller
     public function update_post($id)
     {
         check_authorization();
+
+        $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]|max_length[20]');
+        $this->form_validation->set_rules('price', 'Price', 'required|decimal');
+
+        if (!$this->form_validation->run()) {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Validation Error.',
+                'errors' => $this->form_validation->error_array()
+            ], REST_Controller::HTTP_BAD_REQUEST);
+        }
 
         $input = $this->input->post();
         $data['name'] = @$input['name'];

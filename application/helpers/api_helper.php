@@ -31,9 +31,3 @@ function check_authorization() {
         ], REST_Controller::HTTP_UNAUTHORIZED);
     }
 }
-
-function format_validation_errors_for_api($validation_errors) {
-    $validation_errors = explode("\n", strip_tags(validation_errors()));
-    $validation_errors = array_filter($validation_errors);
-    return $validation_errors;
-}
