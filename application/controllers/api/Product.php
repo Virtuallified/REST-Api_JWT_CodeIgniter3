@@ -33,6 +33,7 @@ class Product extends REST_Controller
         parent::__construct();
         $this->load->library('Authorization_Token');
         $this->load->model('Product_model');
+        $this->load->helper('api_helper');
     }
 
     /**
@@ -42,17 +43,14 @@ class Product extends REST_Controller
      */
     public function index_get($id = 0)
     {
-        $decodedToken = $this->authorization_token->validateToken();
-        if ($decodedToken['status']) {
-            if (!empty($id)) {
-                $data = $this->Product_model->show($id);
-            } else {
-                $data = $this->Product_model->show();
-            }
-            $this->response($data, REST_Controller::HTTP_OK);
+        check_authorization();
+
+        if (!empty($id)) {
+            $data = $this->Product_model->show($id);
         } else {
-            $this->response($decodedToken);
+            $data = $this->Product_model->show();
         }
+        $this->response($data, REST_Controller::HTTP_OK);
     }
 
     /**
@@ -62,17 +60,14 @@ class Product extends REST_Controller
      */
     public function index_post()
     {
-        $decodedToken = $this->authorization_token->validateToken();
-        if ($decodedToken['status']) {
-            $input = $this->input->post();
-            $data['name'] = @$input['name'];
-            $data['price'] = @$input['price'];
-            $data = $this->Product_model->insert($input);
+        check_authorization();
 
-            $this->response(['Product created successfully.'], REST_Controller::HTTP_OK);
-        } else {
-            $this->response($decodedToken);
-        }
+        $input = $this->input->post();
+        $data['name'] = @$input['name'];
+        $data['price'] = @$input['price'];
+        $data = $this->Product_model->insert($input);
+
+        $this->response(['Product created successfully.'], REST_Controller::HTTP_OK);
     }
 
     /**
@@ -82,20 +77,17 @@ class Product extends REST_Controller
      */
     public function update_post($id)
     {
-        $decodedToken = $this->authorization_token->validateToken();
-        if ($decodedToken['status']) {
-            $input = $this->input->post();
-            $data['name'] = @$input['name'];
-            $data['price'] = @$input['price'];
-            $response = $this->Product_model->update($data, $id);
+        check_authorization();
 
-            if ($response) {
-                $this->response(['Product updated successfully.'], REST_Controller::HTTP_OK);
-            } else {
-                $this->response(['Not updated'], REST_Controller::HTTP_OK);
-            }
+        $input = $this->input->post();
+        $data['name'] = @$input['name'];
+        $data['price'] = @$input['price'];
+        $response = $this->Product_model->update($data, $id);
+
+        if ($response) {
+            $this->response(['Product updated successfully.'], REST_Controller::HTTP_OK);
         } else {
-            $this->response($decodedToken);
+            $this->response(['Not updated'], REST_Controller::HTTP_OK);
         }
     }
 
@@ -106,15 +98,14 @@ class Product extends REST_Controller
      */
     public function index_delete($id)
     {
-        $decodedToken = $this->authorization_token->validateToken();
-        if ($decodedToken['status']) {
-            // ------- Main Logic part -------
-            $response = $this->Product_model->delete($id);
+        check_authorization();
 
-            $response > 0 ? $this->response(['Product deleted successfully.'], REST_Controller::HTTP_OK) : $this->response(['Not deleted'], REST_Controller::HTTP_OK);
-            // ------------- End -------------
+        $response = $this->Product_model->delete($id);
+
+        if ($response) {
+            $this->response(['Product deleted successfully.'], REST_Controller::HTTP_OK);
         } else {
-            $this->response($decodedToken);
+            $this->response(['Not deleted'], REST_Controller::HTTP_OK);
         }
     }
 }
