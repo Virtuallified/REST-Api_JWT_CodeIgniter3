@@ -53,6 +53,16 @@ URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/login](http://localhost/
 |username |
 |password |
 
+#### Verify Token
+
+Verb POST
+
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/api/test_api/verify_token](http://localhost/dev/php-codeigniter3/rest_api_jwt/api/test_api/verify_token)
+
+|Headers      |Body     |
+|-------------|---------|
+|Jwt-Authorization|         |
+
 ### Product CRUD
 
 #### List
