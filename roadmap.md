@@ -11,4 +11,5 @@
  - [x] refresh readme.md with new URLs // review readme.md
  - [x] put reference https://github.com/chriskacerguis/codeigniter-restserver
  - [x] put verify token on readme.md
- - [ ] go live on dreamhost.
+ - [x] go live on dreamhost
+ - [ ] update readme.md with instructions to access the sandbox live on vittoretti.com

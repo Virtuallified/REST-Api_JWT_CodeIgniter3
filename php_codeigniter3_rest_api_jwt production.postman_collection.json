@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "d544961b-1785-4299-9312-caf4eb1392a2",
+		"name": "php_codeigniter3_rest_api_jwt production",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "newUser1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "user1@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "newUser1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/api/test_api/verify_token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Jwt-Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/test_api/verify_token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"test_api",
+						"verify_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Jwt-Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/product/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/show/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Jwt-Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/product/show/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"show",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/insert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Jwt-Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "BrunaChicken",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "45.60",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/product/insert",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/update/1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Jwt-Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "BrunaChicken",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "55.50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/product/update/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/product/delete/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Jwt-Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/product/delete/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://vittoretti.com/projects/rest_api_jwt",
+			"type": "string"
+		}
+	]
+}
