@@ -1,30 +1,20 @@
-## CodeIgniter 3 REST API Integration with JWT
-This toolkit is for people who like to build web REST API's with token based structure like JWT using PHP. Its goal is to enable you to develop api much faster than you could if you were writing code from scratch, by providing a template for your workings with the REST API with JWT based tokens.
+# CodeIgniter 3 REST API Integration with JWT
+This sandbox is for people who would like to build web REST API's with token based structure like JWT using PHP. Its goal is to enable you to develop API much faster than you could if you were writing code from scratch, by providing a template for your workings with the REST API with JWT based tokens.
 
-*********************
-**Release Information**
-*********************
-This repo contains in-development code for future releases.
-
-*********
-**Features**
-*********
+## Features
 
 1. Complete REST API control
 2. JWT based access tokens
 3. CRUD operations
-4. Register/Login/Logout Mechanism
+4. Register/Login Mechanism
 5. Proper Authentication
 6. Validation control
 7. DB structure given
 8. Required SQL given
 9. Routing handled
-10. Session management
 11. Postman collection added
 
-***********
-**Instruction**
-***********
+## Instruction
 
 - Change `jwt_key` & `token_expire_time` according to your need.
 - Change `$config['base_url']` in config.php
@@ -32,23 +22,19 @@ This repo contains in-development code for future releases.
 - Import .sql file of create by database tables from raw SQL given above controller file. 
 - Register a User.
 - Login with that user to get the `access_token`.
-- To perform crud operations you have to supply the `access_token` in header for `Jwt-Authorization` with other data in body section.
-- If `access_token` expired, you can also regenerate `access_token` by providing `username`.
-- Logout & clear the session.
+- To perform crud operations you have to supply the `access_token` in header for `Jwt-Authorization` param with other data in body section.
+- Initially `access_token` expires after 10 minutes.
+- `jwt_key` must be changed for your own protection in production environment.
 
-> [!IMPORTANT]
-> Initially `access_token` has been set for 1 minute.
+## Postman Calls & Methods
 
-> [!WARNING]
-> `jwt_key` must be changed for your own protection in production environment.
-***********************
-**Postman Calls & Methods**
+### Register & Login
 
-***********************
+#### Register
 
-#### Register & Login
+Verb POST 
 
-POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/register](http://localhost/dev/php-codeigniter3/rest_api_jwt/register)
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/register](http://localhost/dev/php-codeigniter3/rest_api_jwt/register)
 
 |Body     |
 |---------|
@@ -56,51 +42,84 @@ POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/register](http://loca
 |email    |
 |password |
 
-POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/login](http://localhost/dev/php-codeigniter3/rest_api_jwt/login)
+#### Login
+
+Verb POST
+
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/login](http://localhost/dev/php-codeigniter3/rest_api_jwt/login)
 
 |Body     |
 |---------|
 |username |
 |password |
 
-POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/logout](http://localhost/dev/php-codeigniter3/rest_api_jwt/logout)
+### Product CRUD
 
-### CRUD
+#### List
 
-GET : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product](http://localhost/dev/php-codeigniter3/rest_api_jwt/product)
+Verb GET
 
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/list](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/list)
 
 |Headers      |Body     |
 |-------------|---------|
 |Jwt-Authorization|         |
 
-POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product](http://localhost/dev/php-codeigniter3/rest_api_jwt/product)
+#### Show
+
+Verb GET 
+
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/show/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/show/:id)
+
+|Headers      |Body     |
+|-------------|---------|
+|Jwt-Authorization|         |
+
+#### Insert
+
+Verb POST 
+
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/insert](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/insert)
 
 |Headers      |Body     |
 |-------------|---------|
 |Jwt-Authorization|name     |
 |             |price    |
 
-POST : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id)
+#### Update
 
-**PUT** method doesn’t work properly with PHP (it's hard to get the parameters). The solution is to use **POST** method to perform a product **UPDATE**.
+Verb POST
+
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id)
+
+*\* Ideally we should use **PUT** verb to **UPDATE** action. But PHP doesn’t work properly with **PUT** (it's hard to get the PUT parameters). So, the solution is to use **POST** verb to perform an **UPDATE**.*
 
 |Headers      |Body     |
 |-------------|---------|
 |Jwt-Authorization|name     |
 |             |price    |
 
-DELETE : [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/:id)
+#### Delete
+
+Verb DELETE
+
+URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/delete/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/delete/:id)
 
 |Headers      |Body     |
 |-------------|---------|
 |Jwt-Authorization|         |
 
-*******************
-Server Requirements
-*******************
+## Server Requirements
 
-PHP version 5.6 or newer is recommended.
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+- Tested in XAMPP 3.3.0 with:
+  - PHP 8.0.13
+  - 10.4.22-MariaDB
+  - Apache/2.4.51 (Win64) 
+- This should work with PHP 5.6 or newer.
+
+## Reference
+
+This sandbox is based on these works:
+
+- https://github.com/chriskacerguis/codeigniter-restserver
+- https://github.com/Virtuallified/REST-Api_JWT_CodeIgniter3
