@@ -1,4 +1,5 @@
 # CodeIgniter 3 REST API Integration with JWT
+
 This sandbox is for people who would like to build web REST API's with token based structure like JWT using PHP. Its goal is to enable you to develop API much faster than you could if you were writing code from scratch, by providing a template for your workings with the REST API with JWT based tokens.
 
 ## Features
@@ -28,7 +29,7 @@ This sandbox is for people who would like to build web REST API's with token bas
 
 ## Postman Calls & Methods
 
-### Register & Login
+### Authentication
 
 #### Register
 
@@ -102,7 +103,7 @@ Verb POST
 
 URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id](http://localhost/dev/php-codeigniter3/rest_api_jwt/product/update/:id)
 
-*\* Ideally we should use **PUT** verb to **UPDATE** action. But PHP doesn’t work properly with **PUT** (it's hard to get the PUT parameters). So, the solution is to use **POST** verb to perform an **UPDATE**.*
+*\* Ideally we should use **PUT** verb to **UPDATE** action. But PHP doesn’t work properly with **PUT** (it's hard to get the PUT parameters). So the solution is to use **POST** verb to perform an **UPDATE**.*
 
 |Headers      |Body     |
 |-------------|---------|
