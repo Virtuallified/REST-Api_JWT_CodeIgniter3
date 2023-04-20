@@ -81,7 +81,7 @@
 				"header": [
 					{
 						"key": "Jwt-Authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxOTI0NTg4fQ.prrze1E3X5gufN8lXiPXBU-ahYSe4rQHpINz1x733j4",
 						"type": "default"
 					}
 				],
@@ -106,7 +106,7 @@
 				"header": [
 					{
 						"key": "Jwt-Authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxODQ4Nzc4fQ.KsKMqm6l5Co256JmkaOxjp9J2xlCZrBwpEKFXkvMskE"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjgxOTI0NTg4fQ.prrze1E3X5gufN8lXiPXBU-ahYSe4rQHpINz1x733j4"
 					}
 				],
 				"url": {
@@ -271,7 +271,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "https://vittoretti.com/projects/rest_api_jwt",
+			"value": "https://vittoretti.com/portfolio/projects/rest_api_jwt",
 			"type": "string"
 		}
 	]

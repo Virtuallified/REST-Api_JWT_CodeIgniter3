@@ -12,4 +12,8 @@
  - [x] put reference https://github.com/chriskacerguis/codeigniter-restserver
  - [x] put verify token on readme.md
  - [x] go live on dreamhost
+ - [x] move projects to portfolio
+ - [ ] save token in database
+ - [ ] renew token
+ - [ ] logout
  - [ ] update readme.md with instructions to access the sandbox live on vittoretti.com
