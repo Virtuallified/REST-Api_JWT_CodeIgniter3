@@ -73,7 +73,7 @@ class Product extends REST_Controller
     {
         check_authorization();
 
-        $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]|max_length[20]');
+        $this->form_validation->set_rules('name', 'Name', 'required|trim|min_length[3]|max_length[20]');
         $this->form_validation->set_rules('price', 'Price', 'required|decimal');
 
         if (!$this->form_validation->run()) {
@@ -102,7 +102,7 @@ class Product extends REST_Controller
     {
         check_authorization();
 
-        $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]|max_length[20]');
+        $this->form_validation->set_rules('name', 'Name', 'required|trim|min_length[3]|max_length[20]');
         $this->form_validation->set_rules('price', 'Price', 'required|decimal');
 
         if (!$this->form_validation->run()) {
