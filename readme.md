@@ -13,7 +13,11 @@ This sandbox is for people who would like to build web REST API's with token bas
 7. DB structure given
 8. Required SQL given
 9. Routing handled
-11. Postman collection added
+10. Postman collection added
+
+## Live Test
+
+- Download [postman collection](https://vittoretti.com/portfolio/download.php?file=rest_api_jwt-production-postman) and test this sandbox now.
 
 ## Instruction
 
@@ -130,7 +134,7 @@ URL [http://localhost/dev/php-codeigniter3/rest_api_jwt/product/delete/:id](http
 
 ## Reference
 
-This sandbox is based on these works:
+This sandbox is based on these repos:
 
 - https://github.com/chriskacerguis/codeigniter-restserver
 - https://github.com/Virtuallified/REST-Api_JWT_CodeIgniter3
