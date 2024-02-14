@@ -16,6 +16,8 @@ require_once APPPATH . 'third_party/php-jwt/SignatureInvalidException.php';
 
 use \Firebase\JWT\JWT;
 
+#[\AllowDynamicProperties]
+
 class Authorization_Token 
 {
     /**
